@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        label, input, select {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Real Estate Price Prediction</h2>
+    <form action="/predict" method="post">
+        <label>Property Type:</label>
+        <select name="property_type">
+            <option value="Flat">Flat</option>
+            <option value="House">House</option>
+            <option value="Plot">Plot</option>
+        </select>
+
+        <label>Location:</label>
+        <input type="text" name="location" required>
+
+        <label>City:</label>
+        <input type="text" name="city" required>
+
+        <label>Baths:</label>
+        <input type="number" name="baths" required>
+
+        <label>Purpose:</label>
+        <select name="purpose">
+            <option value="For Sale">For Sale</option>
+            <option value="For Rent">For Rent</option>
+        </select>
+
+        <label>Bedrooms:</label>
+        <input type="number" name="bedrooms" required>
+
+        <label>Area Type:</label>
+        <select name="Area Type">
+            <option value="Marla">Marla</option>
+            <option value="Kanal">Kanal</option>
+            <option value="Sq. Ft.">Sq. Ft.</option>
+        </select>
+
+        <label>Area Size:</label>
+        <input type="number" name="Area Size" required>
+
+        <br>
+        <button type="submit">Predict Price</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
